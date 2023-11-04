@@ -3,14 +3,14 @@ import { useDispatch } from "react-redux";
 import searchIcon from "../../Assets/Images/searchIcon.svg";
 import no from "../../Assets/Images/close.svg";
 import { getDataAction, SignOutUserAction } from "../../Core/redux/actions/mainActions";
-import MiniLoading from "../../Components/Loading/loading";
+import loading from "../../Components/Loading/loading";
 import "./home.css";
 import { Modal } from "react-bootstrap";
 import { Box } from "@mui/material";
-import StadisticsTable from "../../Components/StadisticsTable";
-import DataChart from "../../Components/DataChart";
+import StadisticsTable from "../../Components/StadisticsTable/stadisticsTable";
+import DataChart from "../../Components/DataChart/DataChart";
 import { useNavigate } from "react-router";
-import DataChartAvg from "../../Components/DataChartAvg";
+import DataChartAvg from "../../Components/DataChartAvg/dataChartAvg";
 import { chartTypes } from "../../Utils/constants";
 
 function Home() {
@@ -34,19 +34,20 @@ function Home() {
   const navigate = useNavigate();
   const fetchVehiclesData = async () => {
     const response = await dispatch(getDataAction());
-
-    if (response && response.data?.data) {
-      setVehiclesData(response.data?.data);
-      setVehiclesInitialData(response.data?.data);
-      setStadisticsData(response.data?.desviacion_estandar_df);
-      setAvgData(response.data?.promedio_df);
-      const labels = response.data?.desviacion_estandar_df.map((item) => { return item.class });
+    debugger
+console.log('vehicles data',response)
+    if (response) {
+      setVehiclesData(response.vehicles_data);
+      setVehiclesInitialData(response.vehicles_data);
+      setStadisticsData(response.std_data);
+      setAvgData(response.avg_data);
+      const labels = response.std_data.map((item) => { return item.class });
       setFilterStadisticsData(labels);
       setSelectedFilter(labels[0]);
       setSelectedChart("Bar");
 
     } else {
-      console.error("Error:", response.toString());
+      //console.error("Error:", response.toString());
       navigate("/signIn");
     }
     setIsLoading(false);
@@ -234,7 +235,7 @@ function Home() {
       </header>
       <div className="continer container-fluid">
         {isLoading ? (
-          <MiniLoading />
+          <loading />
         ) : (
           vehiclesData && vehiclesData.length > 0 && DataDisplayTable(vehiclesData)
         )

@@ -67,7 +67,6 @@ function StadisticsTable({  stadisticsData, avgData }) {
         <table className="action-table" role="table">
           <thead className="table-head">
             <tr>
-              <th>Class</th>
               <th>Compactness</th>
               <th>Circularity</th>
               <th>Distance Circularity</th>
@@ -86,12 +85,12 @@ function StadisticsTable({  stadisticsData, avgData }) {
               <th>Skewness About.1</th>
               <th>Skewness About.2</th>
               <th>Hollows Ratio</th>
+              <th>Class</th>
             </tr>
           </thead>
           <tbody className="tbody-data">
             {avgData?.map((item, index) => (
               <tr key={index}>
-                <td>{item.class}</td>
                 <td>{item.compactness.toFixed(3)}</td>
                 <td>{item.circularity.toFixed(3)}</td>
                 <td>{item.distance_circularity.toFixed(3)}</td>
@@ -110,6 +109,7 @@ function StadisticsTable({  stadisticsData, avgData }) {
                 <td>{item['skewness_about.1'].toFixed(3)}</td>
                 <td>{item['skewness_about.2'].toFixed(3)}</td>
                 <td>{item.hollows_ratio.toFixed(3)}</td>
+                <td>{item.class}</td>
               </tr>
             ))}
           </tbody>

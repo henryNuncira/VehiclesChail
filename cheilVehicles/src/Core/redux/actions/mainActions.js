@@ -4,7 +4,7 @@ export const getDataAction = () => async () => {
   try {
     const response = await getDataService();
     const { data, status } = response;
-    if (status === 200 && data?.data) {
+    if (data.status === 200 && data?.data) {
       return response;
     }else{
       return response?.data;

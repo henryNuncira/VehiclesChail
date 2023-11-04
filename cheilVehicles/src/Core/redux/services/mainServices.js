@@ -2,7 +2,7 @@ import { axios_vehicles } from "../../../Core/Api/axios";
 
 const mdlP = {
     loginURL: "/signIn?email=",
-    getDataURL: "/getVehicles",
+    getDataURL: "/GetVehicles",
     logoutURL: "/SignOut",
     // fetchTasksURL: "mdl07/dashBoard/summaryTask",
 };

@@ -32,6 +32,7 @@ export const loginUser = (email, pass, props) => {
           password: pass,
         };
         const response = await signInUserService(userCredentials);
+        console.log(response)
         if (response.data?.status === "400" )
           {dispatch(loginError("Verify your credentials, Email invalid"));
         return false}

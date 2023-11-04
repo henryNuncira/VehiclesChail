@@ -1,0 +1,88 @@
+.tbody-data {
+    font-size: 11px !important;
+}
+
+.table-head {
+    font-size: 16px !important;
+}
+
+.action-table {
+    border-bottom: 1px solid var(--gray);
+    width: 100%;
+}
+
+.action-table-topbar {
+    margin-top: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid var(--gray);
+    border-radius: 10px 10px 0px 0px;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom: none;
+}
+
+.action-table th {
+    font-size: 14px;
+    /* padding: 12px 23px; */
+    border: 1px solid var(--gray);
+    background-color: #f8f9fa;
+}
+
+.action-table tr {
+    font-size: 14px;
+    background-color: var(--main-color);
+}
+
+.action-table td {
+    /* padding: 21px 23px; */
+    border: 1px solid var(--gray);
+    border-bottom: none;
+    border-top: none;
+    gap: 0px;
+}
+
+.action-table-buttons button {
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 11px 23px;
+}
+
+.action-table-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.action-table-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.action-table-buttons button {
+    border-radius: 5px;
+    font-size: 14px;
+    border: none;
+    padding: 11px 23px;
+}
+.vehicles-search {
+    position: relative;
+    width: 600px;
+}
+.vehicles-search input {    
+    border-radius: 5px;
+    width: 100%;
+}
+.inv-search-icon {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    width: 2.5%;
+}
+.container-table-modal{
+    width: 100%!important;
+}
